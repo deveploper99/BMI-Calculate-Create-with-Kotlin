@@ -44,6 +44,13 @@ class MainActivity : AppCompatActivity() {
 
             binding.display.text = "$bmi"
 
+            val catagori = when{
+                bmi <18.5 -> "Underweight"
+                bmi in 18.5..24.9 -> "Normal Weight"
+                bmi in 25.0 ..29.9 -> "Over Weight"
+                else ->"Obese"
+            }
+
 
 
 
