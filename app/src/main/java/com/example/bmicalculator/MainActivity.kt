@@ -1,6 +1,7 @@
 package com.example.bmicalculator
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.enableEdgeToEdge
@@ -51,7 +52,10 @@ class MainActivity : AppCompatActivity() {
                 else ->"Obese"
             }
 
-
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("bmi_value",bmi)
+            intent.putExtra("bmi_catagori",catagori)
+            startActivity(intent)
 
 
         }

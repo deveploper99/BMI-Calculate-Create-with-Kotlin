@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
+
+    <string-array name="height_units">
+        <item>cm</item>
+        <item>feet</item>
+    </string-array>
 </resources>
