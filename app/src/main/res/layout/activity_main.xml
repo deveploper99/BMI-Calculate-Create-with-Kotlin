@@ -235,7 +235,7 @@
             android:padding="8dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:hint="CM"
+            android:hint="Enter your height (cm/feet)"
             android:minHeight="60dp"
             android:textColor="@color/black"
             android:textSize="28sp" />

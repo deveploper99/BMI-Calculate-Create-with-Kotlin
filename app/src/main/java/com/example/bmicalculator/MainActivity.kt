@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
+import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,6 +18,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        val adapter = ArrayAdapter.createFromResource(this,R.array.height_units,R.layout.spinner_item)
+        adapter.setDropDownViewResource(R.layout.spinner_item)
+        binding.spinnerUnit.adapter= adapter
 
 
         binding.appCompatButton.setOnClickListener {
@@ -39,11 +45,18 @@ class MainActivity : AppCompatActivity() {
 
             val weight = edInput_1.toInt()
             val heightCM = edInput_2.toDouble()
-            val heightMeter = heightCM/100
 
-            val bmi = weight/(heightMeter*heightMeter)
+            val selectedUnit = binding.spinnerUnit.selectedItem.toString()
 
-            binding.display.text = "$bmi"
+
+            val heightInMeters = when(selectedUnit){
+                "cm" -> heightCM / 100
+                "feet" -> heightCM * 0.3048
+                else -> heightCM / 100
+            }
+
+            val bmi = weight / (heightInMeters * heightInMeters)
+
 
             val catagori = when{
                 bmi <18.5 -> "Underweight"
