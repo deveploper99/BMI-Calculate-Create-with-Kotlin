@@ -9,6 +9,8 @@ android {
         version = release(36)
     }
 
+
+
     defaultConfig {
         applicationId = "com.example.bmicalculator"
         minSdk = 24

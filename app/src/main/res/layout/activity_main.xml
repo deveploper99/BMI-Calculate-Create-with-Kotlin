@@ -96,7 +96,6 @@
                 android:background="@drawable/card_stoks"
                 android:gravity="center"
                 android:orientation="vertical"
-
                 android:padding="16dp">
 
                 <ImageView
@@ -157,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Height"
+        android:text="Weight "
         android:textColor="@color/black"
         android:textSize="20.sp"
         android:textStyle="bold"
@@ -180,8 +179,9 @@
             android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:padding="8dp"
+            android:hint="Kg"
             android:minHeight="60dp"
             android:gravity="center"
             android:textColor="@color/black"
@@ -194,7 +194,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Weight"
+        android:text="Height"
         android:textColor="@color/black"
         android:textSize="20.sp"
         android:textStyle="bold"
@@ -214,13 +214,14 @@
         app:layout_constraintTop_toBottomOf="@+id/weight">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_input"
+            android:id="@+id/edInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="numberDecimal"
             android:padding="8dp"
             android:layout_gravity="center"
             android:gravity="center"
+            android:hint="CM"
             android:minHeight="60dp"
             android:textColor="@color/black"
             android:textSize="28sp" />
